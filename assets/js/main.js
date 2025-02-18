@@ -12,6 +12,12 @@ const users =[
         phone: '9999999999',
         ref: 200,
         refBy: 100
+    },
+    {
+        email: 'tost@tost.com',
+        phone: '9999999999',
+        ref: 300,
+        refBy: 200
     }
 ]
 
@@ -21,14 +27,33 @@ const getUser = (userData) => {
     })
 }
 
+const getTotalSubscribers = (userData) => {
+    const subs = users.filter((user) => {
+        return user.refBy == userData.ref
+    })
+    return subs.length
+}
+
 const showInvite = (userData) => {
     app.innerHTML = `
-        <input type="text" id="link" value="https://evento.com" disabled />
+        <input type="text" id="link" value="https://evento.com?ref=${userData.ref}" disabled />
         <div id="stats">
-            <h4>80</h4>
+            <h4>${getTotalSubscribers(userData)}</h4>
             <p>Inscrições feitas</p>
         </div>
     `
+}
+
+const saveUser = (userData) => {
+    const newUser = {
+        ...userData,
+        ref: Math.round(Math.random() * 4000),
+        refBy: 100
+    }
+
+    users.push(newUser)
+    console.log(users)
+    return newUser
 }
 
 const formAction = () => {
@@ -45,9 +70,11 @@ const formAction = () => {
         
         if(user) {
             //encontrei o user
-            showInvite()
+            showInvite(user)
         } else {
             //não encontrei o user
+            const newUser = saveUser(userData)
+            showInvite(newUser)
         }
     }
 }
@@ -67,3 +94,6 @@ const startApp = () => {
 }
 
 startApp()
+
+
+document.getElementById("logo").onclick = () => startApp()
