@@ -36,11 +36,25 @@ const getTotalSubscribers = (userData) => {
 
 const showInvite = (userData) => {
     app.innerHTML = `
-        <input type="text" id="link" value="https://evento.com?ref=${userData.ref}" disabled />
-        <div id="stats">
-            <h4>${getTotalSubscribers(userData)}</h4>
-            <p>Inscrições feitas</p>
-        </div>
+        <main>
+                <h3>Inscrição confirmada!</h3>
+                <p>
+                    Convide mais pessoas e concorra a prêmios!<br>
+                    Compartilhe o link e acompanhe as inscrições:
+                </p>
+
+                <div class="input-group">
+                    <label for="link">
+                        <img src="./assets/image/link.svg" alt="Link icon" class="link-icon">
+                    </label>
+                    <input type="text" id="link" value="https://evento.com?ref=${userData.ref}" disabled />
+                </div>
+            </main>
+
+            <section class="stats">
+                <h4>${getTotalSubscribers(userData)}</h4>
+                <p>Incrições feitas</p>
+            </section>
     `
 }
 
@@ -81,11 +95,44 @@ const formAction = () => {
 
 const startApp = () => {
     const content = `
-        <form id="form">
-            <input type="email" name="email" placeholder="E-mail" />
-            <input type="text" name="phone" placeholder="Telefone" />
-            <button>Confirmar</button>
-        </form>
+        <main>
+                <section class="about">
+                    <div class="section-header">
+                        <h2>Sobre o evento</h2>
+                        <span class="badge">Ao vivo</span>
+                    </div>
+
+                    <p>Um evento feito por e para pessoas desenvolvedoras apaixonadas por criar soluções inovadoras e compartilhar conhecimento. Vamos mergulhar nas tendências mais recentes em desenvolvimento de software, arquitetura de sistemas e tecnologias emergentes, com palestras, workshops e hackathons. <br><br>
+                    Dias 15 a 17 de março | Das 18h às 21h | Online &amp; Gratuito </p>
+                </section>
+
+                <section class="registration">
+                    <h2>Inscrição</h2>
+
+                    <form id="form">
+                        <div class="input-wrapper">
+                            <div class="input-group">
+                                <label for="email">
+                                    <img src="./assets/image/mail.svg" alt="E-mail icon">
+                                </label>
+                                <input type="email" id="email" name="email" placeholder="E-mail">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="phone">
+                                    <img src="./assets/image/phone.svg" alt="Phone icon">
+                                </label>
+                                <input type="text" id="phone" name="phone" placeholder="Telefone">
+                            </div>
+
+                            <button>
+                                Confirmar
+                                <img src="./assets/image/arrow-right.svg" alt="Arrow right">
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </main>
     `
 
     app.innerHTML = content

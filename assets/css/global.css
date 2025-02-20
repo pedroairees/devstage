@@ -1,3 +1,32 @@
 :root {
-    font-family: "Montserrat";
+    font-family: var(--font-montserrat);
+    color: #E1E1E6;
+
+    /* colors */
+    --blue: #6F9DE2;
+    --purple: #9871F3;
+    --gradient: 90deg, #4B7FCD 0%, #8A61EA 100%;
+    --feedback-danger: #F05D6C;
+
+    --gray-100: #DAE4F2;
+    --gray-200: #C8D0DA;
+    --gray-300: #95A1B1;
+    --gray-400: #6F7D90;
+    --gray-500: #2A313C;
+    --gray-600: #21252C;
+    --gray-700: #191D24;
+    --gray-800: #13161B;
+    --gray-900: #0F1216;
+
+    /* fonts */
+    --font-oxanium: "Oxanium";
+    --font-montserrat: "Montserrat";
+    --heading-lg: 600 2.5rem/100% var(--font-oxanium);
+    --heading-md: 600 1.5rem/100% var(--font-oxanium);
+    --heading-sm: 600 1.25rem/100% var(--font-oxanium);
+
+    --body-md: 400 1rem/160% var(--font-montserrat);
+    --body-sm: 400 0.875rem/160% var(--font-montserrat);
+    --body-xs: 600 0.75rem/160% var(--font-montserrat);
+    --button: 600 1rem/160% var(--font-montserrat);
 }
