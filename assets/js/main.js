@@ -56,6 +56,8 @@ const showInvite = (userData) => {
                 <p>Incrições feitas</p>
             </section>
     `
+
+    app.setAttribute('class', 'page-invate')
 }
 
 const saveUser = (userData) => {
@@ -124,12 +126,13 @@ const startApp = () => {
                                 </label>
                                 <input type="text" id="phone" name="phone" placeholder="Telefone">
                             </div>
-
-                            <button>
-                                Confirmar
-                                <img src="./assets/image/arrow-right.svg" alt="Arrow right">
-                            </button>
                         </div>
+
+                        <button>
+                            Confirmar
+                            <img src="./assets/image/arrow-right.svg" alt="Arrow right">
+                        </button>
+                        
                     </form>
                 </section>
             </main>
@@ -137,10 +140,15 @@ const startApp = () => {
 
     app.innerHTML = content
 
+    app.setAttribute('class', 'page-start')
     formAction()
 }
 
-startApp()
-
+//startApp()
+showInvite({
+    email: 'test@test.com',
+    phone: '999',
+    ref: 100
+})
 
 document.getElementById("logo").onclick = () => startApp()
