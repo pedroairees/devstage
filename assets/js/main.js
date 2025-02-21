@@ -144,11 +144,6 @@ const startApp = () => {
     formAction()
 }
 
-//startApp()
-showInvite({
-    email: 'test@test.com',
-    phone: '999',
-    ref: 100
-})
+startApp()
 
 document.getElementById("logo").onclick = () => startApp()

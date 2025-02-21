@@ -188,4 +188,6 @@ h3 {
 
 h4 {
     margin-top: .5rem;
+    font: var(--heading-md);
+    color: var(--gray-200);
 }
