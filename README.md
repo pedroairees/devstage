@@ -1,11 +1,11 @@
-<h1 style="text-align: center">
+<h1 align="center">
     <img src="./assets/image/Logo.svg">
     <br><span style="color: #6F9DE2">CodeCraft</span>
     <br>Summit 2025
 </h1>
 
 
-<h1 style="text-align: center">
+<h1 align="center">
     <img src="./assets/image/project-view.gif" alt="Preview do projeto">
     <a href="https://devstage-rho.vercel.app/" style="font-size: 1rem">Link</a>
 </h1>
