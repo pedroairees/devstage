@@ -30,3 +30,33 @@
     --body-xs: 600 0.75rem/160% var(--font-montserrat);
     --button: 600 1rem/160% var(--font-montserrat);
 }
+
+/* scroll */
+
+body {
+    --sb-track-color: #232E33;
+    --sb-thumb-color: #6f9de2;
+    --sb-size: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 9px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 9px;
+    border: 1px solid #232E33;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color)
+                        var(--sb-track-color);
+    }
+}
